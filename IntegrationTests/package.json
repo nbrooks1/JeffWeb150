@@ -1,0 +1,15 @@
+{
+  "name": "integrationtests",
+  "version": "1.0.0",
+  "description": "Demo For Class",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.5.0"
+  }
+}

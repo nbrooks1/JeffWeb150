@@ -1,0 +1,18 @@
+﻿@page
+@model ShowsSite.Pages.Shows.DetailsModel
+
+@if (Model.Show != null)
+{
+    <h2>Details about @Model.Show.Title</h2>
+    <p> @Model.Show.Title  is on @Model.Show.Network </p>
+}
+ else
+
+            {
+                <div class="alert alert-danger">
+                    <p>@Model.ErrorMessage</p>
+                </div>
+            }
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>

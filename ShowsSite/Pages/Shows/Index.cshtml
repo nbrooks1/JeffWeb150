@@ -1,0 +1,26 @@
+﻿@page
+@model ShowsSite.Pages.Showes.IndexModel
+@{
+}
+
+<h1>Your List of Shows To Watch</h1>
+
+@foreach(var show in Model.Shows)
+            {
+   
+<div class="@Model.GetCssFor(show)">
+    <h3>@show.Title</h3>
+    <p><a asp-page="Details" data-shows-details-link="@show.Id" asp-route-id="@show.Id">Details</a></p>
+    @if(!show.Watched)
+                {
+                    <form method="post">
+                        <button type="submit" asp-page-handler="Watched" asp-route-id="@show.Id" class="btn btn-danger">Mark as Watched</button>
+                    </form>
+                }
+</div>                
+            }
+
+
+<div class="alert alert-success">
+    You have @Model.NumberOfShows on your list!
+</div>

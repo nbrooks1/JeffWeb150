@@ -1,0 +1,25 @@
+﻿@page
+@model ShowsSite.Pages.Shows.NewModel
+
+
+    <h2>Add A Show</h2>
+@if (TempData["flash"] != null)
+{
+    <div class="alert alert-success">
+        <h3>@TempData["flash"]</h3>
+    </div>
+}
+    <form method="post">
+
+        <div class="form-group">
+            <label asp-for="Show.Title"></label>
+            <input class="form-control" asp-for="Show.Title" />
+            <span asp-validation-for="Show.Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Show.Network"></label>
+            <input class="form-control" asp-for="Show.Network" />
+            <span asp-validation-for="Show.Network"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add This Show!</button>
+    </form>
